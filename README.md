@@ -88,9 +88,10 @@ crontab -e
 ```
 
 #### 问题
-部分 vm 可能会采集不到 `vm.net.if.in` 和 `vm.net.if.out` 指标，这是因为网络指标是通过 `vsphere` 的 `PerformanceManager` 采集的。可以在 `vcenter` 中查看虚拟机的 `性能` 图表时，也会发现显示错误 `未指定衡量指标` 或者 `No Metric Specified` 。这是 `vmware` 的 bug，在 `vSphere 6.0 Update 1` 以上版本被修复
-
-详见官方 Knowledge —— [在 VMware vSphere Client 6.0 中查看虚拟机网络的实时性能图表时显示错误：未指定衡量指标 (2125021)](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2125021)
+1. 部分 vm 可能会采集不到 `vm.net.if.in` 和 `vm.net.if.out` 指标，这是因为网络指标是通过 `vsphere` 的 `PerformanceManager` 采集的。可以在 `vcenter` 中查看虚拟机的 `性能` 图表时，也会发现显示错误 `未指定衡量指标` 或者 `No Metric Specified` 。这是 `vmware` 的 bug，在 `vSphere 6.0 Update 1` 以上版本被修复
+	详见官方 Knowledge —— [在 VMware vSphere Client 6.0 中查看虚拟机网络的实时性能图表时显示错误：未指定衡量指标 (2125021)](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2125021)
+2. 针对早期vSphere版本，需要特定的pyvmomi版本，详见[https://pypi.org/project/pyvmomi/](https://pypi.org/project/pyvmomi/)
+> Compatibility Policy pyVmomi versions are marked vSphere_version-release . Pyvmomi maintains minimum backward compatibility with the previous _four_ releases of vSphere and it’s own previous four releases. Compatibility with much older versions may continue to work but will not be actively supported. For example, version v6.0.0 is most compatible with vSphere 6.0, 5.5, 5.1 and 5.0. Initial releases compatible with a version of vSphere will bare a naked version number of v6.0.0 indicating that version of pyVmomi was released simultaneously with the GA version of vSphere with the same version number. 
 
 #### 截图
 esxi 

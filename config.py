@@ -1,7 +1,12 @@
 #coding=utf-8 
 # falcon
-endpoint = "vcenter" # 上报给 open-falcon 的 endpoint
-push_api = "http://127.0.0.1:6060/api/push" # 上报的 http api 接口
+# endpoint = "vcenter" # 上报给 open-falcon 的 endpoint
+# push_api = "http://127.0.0.1:6060/api/push" # 上报的 http api 接口
+# interval = 60 # 上报的 step 间隔
+
+# n9e
+endpoint = "vcenter" # 上报给 open-falcon 的 endpoint，对应n9e的ident
+push_api = "http://127.0.0.1:19000/openfalcon/push" # 上报的 http api 接口
 interval = 60 # 上报的 step 间隔
 
 # vcenter
